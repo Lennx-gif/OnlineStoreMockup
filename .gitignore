@@ -3,3 +3,4 @@
 /storage/uploads/*
 !/storage/logs/.gitkeep
 !/storage/uploads/.gitkeep
+!/storage/uploads/*.svg

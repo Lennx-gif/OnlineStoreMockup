@@ -19,6 +19,7 @@ $errorMessage = flash('error');
     <a class="brand" href="<?= h(url()) ?>"><span>Mini</span>Store</a>
     <nav class="main-nav" aria-label="Main navigation">
         <a class="<?= $activePage === 'shop' ? 'active' : '' ?>" href="<?= h(url()) ?>">Shop</a>
+        <a class="<?= $activePage === 'help' ? 'active' : '' ?>" href="<?= h(url('help.php')) ?>">Help</a>
         <?php if (current_user()): ?>
             <a class="<?= $activePage === 'orders' ? 'active' : '' ?>" href="<?= h(url('account/orders.php')) ?>">My orders</a>
             <?php if (current_user()['role'] === 'admin'): ?>

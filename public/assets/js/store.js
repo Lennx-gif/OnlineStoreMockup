@@ -24,7 +24,10 @@ document.querySelectorAll('.add-cart-form').forEach((form) => {
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
         const button = form.querySelector('button[type="submit"], button:not([type])');
-        if (button) button.disabled = true;
+        if (button) {
+            button.disabled = true;
+            button.classList.add('is-loading');
+        }
         try {
             const response = await fetch(form.action, {
                 method: 'POST',
@@ -36,6 +39,9 @@ document.querySelectorAll('.add-cart-form').forEach((form) => {
             if (!response.ok) throw new Error(result.message || 'The item could not be added.');
             document.querySelectorAll('[data-cart-count]').forEach((count) => {
                 count.textContent = String(result.count);
+                count.classList.remove('bump');
+                void count.offsetWidth; // Force reflow to restart CSS animation
+                count.classList.add('bump');
                 const link = count.closest('a');
                 if (link) link.setAttribute('aria-label', `Cart, ${result.count} items`);
             });
@@ -43,8 +49,18 @@ document.querySelectorAll('.add-cart-form').forEach((form) => {
         } catch (error) {
             announce(error instanceof Error ? error.message : 'The item could not be added.', true);
         } finally {
-            if (button) button.disabled = false;
+            if (button) {
+                button.classList.remove('is-loading');
+                button.disabled = false;
+            }
         }
+    });
+});
+
+// Auto-submit catalogue filter dropdowns for instantaneous response
+document.querySelectorAll('.catalogue-controls select').forEach((select) => {
+    select.addEventListener('change', () => {
+        select.closest('form')?.submit();
     });
 });
 

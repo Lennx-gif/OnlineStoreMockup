@@ -3,6 +3,7 @@ declare(strict_types=1);
 require_once dirname(__DIR__) . '/src/bootstrap.php';
 
 $pageTitle = 'About Us';
+$activePage = 'about';
 require dirname(__DIR__) . '/src/views/header.php';
 ?>
 <article class="prose-page policy-page">

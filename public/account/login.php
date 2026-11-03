@@ -28,9 +28,18 @@ $pageTitle = 'Log in';
 require dirname(__DIR__, 2) . '/src/views/header.php';
 ?>
 <section class="auth-layout">
-    <div class="auth-intro"><p class="eyebrow">Good to see you again</p><h1>Your next<br>great find awaits.</h1>
-        <p>Sign in to continue to checkout and view your orders.</p></div>
-    <div class="form-card"><h2>Log in</h2><p class="muted">Enter your account details below.</p>
+    <div class="auth-story">
+        <p class="eyebrow">Your Mini Store account</p>
+        <h1>A clearer view of every order.</h1>
+        <p class="auth-lead">Sign in to keep your purchases and order progress together in one place.</p>
+        <ul class="auth-benefits">
+            <li><span class="auth-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 9h8M8 13h5"></path><circle cx="17" cy="15" r="3"></circle></svg></span><span><strong>Follow order progress</strong><small>See when an order is pending, processing, shipped, or delivered.</small></span></li>
+            <li><span class="auth-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"></path></svg></span><span><strong>Find past purchases</strong><small>Review your order history whenever you need it.</small></span></li>
+            <li><span class="auth-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18M7 15h4"></path></svg></span><span><strong>Pay on delivery</strong><small>Place an order and pay when it arrives at your door.</small></span></li>
+        </ul>
+        <div class="auth-support"><strong>Need help before signing in?</strong><span>Visit our <a href="<?= h(url('help.php')) ?>">Help Center</a> or <a href="<?= h(url('contact.php')) ?>">contact support</a>.</span></div>
+    </div>
+    <div class="form-card auth-form-card"><p class="eyebrow">Welcome back</p><h2>Log in</h2><p class="muted">Enter the email and password for your account.</p>
         <?php if ($error): ?><p class="notice notice-error" role="alert"><?= h($error) ?></p><?php endif; ?>
         <form method="post" action="<?= h(url('account/login.php')) ?>" class="stacked-form">
             <?= csrf_field() ?>
@@ -38,7 +47,7 @@ require dirname(__DIR__, 2) . '/src/views/header.php';
             <label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required>
             <button class="button button-primary button-wide">Log in</button>
         </form>
-        <p class="form-footnote">New to Mini Store? <a href="<?= h(url('account/register.php')) ?>">Create an account</a></p>
+        <p class="form-footnote">New to Mini Store? <a href="<?= h(url('account/register.php')) ?>">Create an account</a> to track orders and keep your purchase history together.</p>
     </div>
 </section>
 <?php require dirname(__DIR__, 2) . '/src/views/footer.php'; ?>

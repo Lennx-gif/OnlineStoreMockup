@@ -15,7 +15,7 @@ require dirname(__DIR__) . '/src/views/header.php';
 <div class="help-layout">
     <div class="help-grid">
         <section class="help-card">
-            <div class="help-icon">📦</div>
+            <div class="help-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 7 9-4 9 4v10l-9 4-9-4zM3 7l9 4 9-4M12 11v10M7.5 5l9 4"></path></svg></div>
             <h2>Ordering &amp; Tracking</h2>
             <div class="faq-item">
                 <h3>How do I place an order?</h3>
@@ -32,7 +32,7 @@ require dirname(__DIR__) . '/src/views/header.php';
         </section>
 
         <section class="help-card">
-            <div class="help-icon">🚚</div>
+            <div class="help-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 6h11v11H3zM14 10h4l3 3v4h-7z"></path><circle cx="7.5" cy="18" r="1.8"></circle><circle cx="18" cy="18" r="1.8"></circle></svg></div>
             <h2>Shipping &amp; Delivery</h2>
             <div class="faq-item">
                 <h3>How fast is delivery?</h3>
@@ -49,7 +49,7 @@ require dirname(__DIR__) . '/src/views/header.php';
         </section>
 
         <section class="help-card">
-            <div class="help-icon">💳</div>
+            <div class="help-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18M7 15h4"></path></svg></div>
             <h2>Payment on Delivery</h2>
             <div class="faq-item">
                 <h3>How does Payment on Delivery work?</h3>
@@ -62,7 +62,7 @@ require dirname(__DIR__) . '/src/views/header.php';
         </section>
 
         <section class="help-card">
-            <div class="help-icon">🔄</div>
+            <div class="help-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5"></path><path d="M5.5 9a7 7 0 0 1 11.8-2L20 12M4 12l2.7 5a7 7 0 0 0 11.8-2"></path></svg></div>
             <h2>Returns &amp; Warranties</h2>
             <div class="faq-item">
                 <h3>What is your return policy?</h3>

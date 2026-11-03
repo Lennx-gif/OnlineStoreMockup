@@ -39,7 +39,15 @@ function cart_products(): array
 
 function product_image_url(?string $filename): string
 {
-    return $filename
-        ? url('image.php?file=' . rawurlencode($filename))
-        : url('assets/img/product-placeholder.svg');
+    if ($filename === null || !preg_match('/\A[a-f0-9]{32}\.(jpg|png|webp|svg)\z/D', $filename)) {
+        return url('assets/img/product-placeholder.svg');
+    }
+
+    $imagePath = UPLOAD_DIR . DIRECTORY_SEPARATOR . $filename;
+    if (!is_file($imagePath)) {
+        return url('assets/img/product-placeholder.svg');
+    }
+
+    $imageVersion = filemtime($imagePath) ?: 0;
+    return url('image.php?file=' . rawurlencode($filename) . '&v=' . $imageVersion);
 }

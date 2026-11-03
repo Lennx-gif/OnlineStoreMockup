@@ -22,7 +22,7 @@ require dirname(__DIR__) . '/src/views/header.php';
     <span>/</span><span><?= h($product['name']) ?></span>
 </nav>
 <section class="product-detail">
-    <div class="detail-image"><img src="<?= h(product_image_url($product['image'])) ?>" alt="<?= h($product['name']) ?>" width="800" height="600" decoding="async"></div>
+    <div class="detail-image"><img src="<?= h(product_image_url($product['image'])) ?>" data-image-fallback="<?= h(url('assets/img/product-placeholder.svg')) ?>" alt="<?= h($product['name']) ?>" width="800" height="600" decoding="async"></div>
     <div class="detail-copy">
         <p class="eyebrow"><?= h($product['category']) ?></p>
         <h1><?= h($product['name']) ?></h1>

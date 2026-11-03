@@ -36,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 $pageTitle = 'Contact Us';
+$activePage = 'contact';
 require dirname(__DIR__) . '/src/views/header.php';
 ?>
 <div class="page-heading">

@@ -8,7 +8,17 @@ function h(string|int|float|null $value): string
 
 function url(string $path = ''): string
 {
-    return '/' . ltrim($path, '/');
+    $scriptName = str_replace('\\', '/', (string) ($_SERVER['SCRIPT_NAME'] ?? '/index.php'));
+    $basePath = dirname($scriptName);
+    if (in_array(basename($basePath), ['account', 'admin', 'api'], true)) {
+        $basePath = dirname($basePath);
+    }
+    $basePath = rtrim($basePath, '/');
+    if ($basePath === '.' || $basePath === DIRECTORY_SEPARATOR) {
+        $basePath = '';
+    }
+
+    return $basePath . '/' . ltrim($path, '/');
 }
 
 function redirect(string $path): never

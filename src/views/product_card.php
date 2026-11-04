@@ -1,6 +1,6 @@
 <article class="product-card">
     <a class="product-image" href="<?= h(url('product.php?id=' . (int) $product['id'])) ?>">
-        <img src="<?= h(product_image_url($product['image'])) ?>" alt="" loading="lazy">
+        <img src="<?= h(product_image_url($product['image'])) ?>" data-image-fallback="<?= h(url('assets/img/product-placeholder.svg')) ?>" alt="<?= h($product['name']) ?>" width="400" height="300" loading="lazy" decoding="async">
         <?php if ((int) $product['stock'] < 1): ?><span class="stock-badge">Sold out</span><?php endif; ?>
     </a>
     <div class="product-card-body">

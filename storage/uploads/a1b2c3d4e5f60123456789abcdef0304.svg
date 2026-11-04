@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#3b82f6" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Container card background -->
+  <rect width="800" height="600" rx="28" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle decorative background rings -->
+  <circle cx="680" cy="120" r="110" fill="#fff" opacity="0.35"/>
+  <circle cx="120" cy="500" r="130" fill="#fff" opacity="0.25"/>
+
+  <!-- Category & Feature Badges -->
+  <g transform="translate(48, 48)">
+    <rect width="130" height="32" rx="16" fill="#3b82f6" opacity="0.12"/>
+    <text x="65" y="21" fill="#3b82f6" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" letter-spacing="1.5" text-anchor="middle">PERIPHERALS</text>
+  </g>
+  <g transform="translate(560, 48)">
+    <rect width="192" height="32" rx="16" fill="#ffffff" opacity="0.85"/>
+    <text x="96" y="20" fill="#475569" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" text-anchor="middle">Autofocus · Stereo Mic</text>
+  </g>
+
+  <!-- Product Illustration -->
+  <g filter="url(#softGlow)">
+    
+            <ellipse cx="400" cy="470" rx="120" ry="16" fill="#cbd5e0" opacity="0.6"/>
+            <!-- Stand Mount -->
+            <rect x="385" y="360" width="30" height="90" rx="6" fill="#334155"/>
+            <rect x="340" y="440" width="120" height="20" rx="8" fill="#1e293b"/>
+            <!-- Camera Cylinder -->
+            <rect x="250" y="250" width="300" height="110" rx="55" fill="#1e293b" stroke="#334155" stroke-width="6"/>
+            <!-- Lens Rings -->
+            <circle cx="400" cy="305" r="42" fill="#0f172a" stroke="#475569" stroke-width="4"/>
+            <circle cx="400" cy="305" r="30" fill="#1e293b" stroke="#38bdf8" stroke-width="3"/>
+            <circle cx="400" cy="305" r="14" fill="#0284c7"/>
+            <circle cx="395" cy="300" r="4" fill="#fff" opacity="0.8"/>
+            <!-- Microphones -->
+            <circle cx="290" cy="305" r="4" fill="#64748b"/>
+            <circle cx="510" cy="305" r="4" fill="#64748b"/>
+        
+  </g>
+
+  <!-- Product Caption Line -->
+  <text x="400" y="555" fill="#334155" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" letter-spacing="-0.3" text-anchor="middle">4K Ultra-HD Webcam</text>
+</svg>

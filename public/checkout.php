@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         $connection->commit();
         $_SESSION['cart'] = [];
-        flash('success', 'Your order has been placed.');
+        flash('success', 'Thank you! Your order has been placed successfully and is now being prepared.');
         redirect('account/orders.php');
     }
 }
@@ -92,16 +92,19 @@ require dirname(__DIR__) . '/src/views/header.php';
 <div class="page-heading"><p class="eyebrow">Almost there</p><h1>Checkout</h1></div>
 <div class="checkout-layout">
     <section class="form-card">
-        <h2>Delivery details</h2>
-        <p class="muted">This learning version records orders locally; no payment is collected.</p>
+        <h2>Delivery &amp; Payment</h2>
+        <div class="payment-badge-box">
+            <span class="badge-tag">Payment on Delivery</span>
+            <p>Pay securely via Cash, Card, or Mobile Money when your package arrives at your doorstep.</p>
+        </div>
         <?php if ($errors): ?><ul class="form-errors"><?php foreach ($errors as $error): ?><li><?= h($error) ?></li><?php endforeach; ?></ul><?php endif; ?>
         <form method="post" action="<?= h(url('checkout.php')) ?>" class="stacked-form">
             <?= csrf_field() ?>
             <label for="shipping_name">Recipient name</label><input id="shipping_name" name="shipping_name" maxlength="100" value="<?= h($shippingName) ?>" required>
-            <label for="shipping_phone">Phone</label><input id="shipping_phone" name="shipping_phone" type="tel" maxlength="30" value="<?= h($phone) ?>" autocomplete="tel" required>
-            <label for="shipping_address">Street address</label><input id="shipping_address" name="shipping_address" maxlength="255" value="<?= h($address) ?>" autocomplete="street-address" required>
-            <label for="shipping_city">Town or city</label><input id="shipping_city" name="shipping_city" maxlength="100" value="<?= h($city) ?>" autocomplete="address-level2" required>
-            <button class="button button-primary button-wide">Place learning order</button>
+            <label for="shipping_phone">Phone number</label><input id="shipping_phone" name="shipping_phone" type="tel" maxlength="30" value="<?= h($phone) ?>" autocomplete="tel" placeholder="e.g. +254 700 000 000" required>
+            <label for="shipping_address">Delivery street address</label><input id="shipping_address" name="shipping_address" maxlength="255" value="<?= h($address) ?>" autocomplete="street-address" placeholder="Apartment / building / street" required>
+            <label for="shipping_city">Town or city</label><input id="shipping_city" name="shipping_city" maxlength="100" value="<?= h($city) ?>" autocomplete="address-level2" placeholder="e.g. Nairobi" required>
+            <button class="button button-primary button-wide">Place Order</button>
         </form>
     </section>
     <aside class="summary-card checkout-summary"><h2>Order summary</h2>
@@ -110,6 +113,7 @@ require dirname(__DIR__) . '/src/views/header.php';
                 <strong><?= h(money((float) $item['price'] * (int) $item['quantity'])) ?></strong></div>
         <?php endforeach; ?>
         <div class="summary-total"><span>Total</span><strong><?= h(money($subtotal)) ?></strong></div>
+        <p class="summary-note">✓ Free delivery on all eligible orders<br>✓ 30-day hassle-free returns</p>
     </aside>
 </div>
 <?php require dirname(__DIR__) . '/src/views/footer.php'; ?>

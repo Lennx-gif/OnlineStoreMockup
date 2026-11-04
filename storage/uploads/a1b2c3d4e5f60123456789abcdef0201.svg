@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#64748b" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Container card background -->
+  <rect width="800" height="600" rx="28" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle decorative background rings -->
+  <circle cx="680" cy="120" r="110" fill="#fff" opacity="0.35"/>
+  <circle cx="120" cy="500" r="130" fill="#fff" opacity="0.25"/>
+
+  <!-- Category & Feature Badges -->
+  <g transform="translate(48, 48)">
+    <rect width="130" height="32" rx="16" fill="#64748b" opacity="0.12"/>
+    <text x="65" y="21" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" letter-spacing="1.5" text-anchor="middle">ACCESSORIES</text>
+  </g>
+  <g transform="translate(560, 48)">
+    <rect width="192" height="32" rx="16" fill="#ffffff" opacity="0.85"/>
+    <text x="96" y="20" fill="#475569" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" text-anchor="middle">4K HDMI · 100W PD</text>
+  </g>
+
+  <!-- Product Illustration -->
+  <g filter="url(#softGlow)">
+    
+            <ellipse cx="400" cy="470" rx="160" ry="18" fill="#cbd5e0" opacity="0.6"/>
+            <!-- Cable -->
+            <path d="M400 230 C400 180, 480 180, 480 230 L480 260" fill="none" stroke="#475569" stroke-width="12" stroke-linecap="round"/>
+            <rect x="470" y="150" width="20" height="40" rx="6" fill="#94a3b8"/>
+            <!-- Aluminum Hub Body -->
+            <rect x="260" y="260" width="280" height="170" rx="24" fill="#94a3b8" stroke="#cbd5e1" stroke-width="4"/>
+            <rect x="275" y="275" width="250" height="140" rx="16" fill="#64748b"/>
+            <!-- Ports -->
+            <rect x="300" y="300" width="45" height="16" rx="4" fill="#0284c7"/>
+            <rect x="360" y="300" width="45" height="16" rx="4" fill="#0284c7"/>
+            <rect x="420" y="300" width="45" height="16" rx="4" fill="#0284c7"/>
+            <rect x="300" y="340" width="60" height="24" rx="4" fill="#1e293b"/>
+            <rect x="380" y="340" width="80" height="8" rx="2" fill="#1e293b"/>
+            <rect x="380" y="354" width="50" height="6" rx="2" fill="#1e293b"/>
+        
+  </g>
+
+  <!-- Product Caption Line -->
+  <text x="400" y="555" fill="#334155" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" letter-spacing="-0.3" text-anchor="middle">7-in-1 Aluminum USB-C Hub</text>
+</svg>

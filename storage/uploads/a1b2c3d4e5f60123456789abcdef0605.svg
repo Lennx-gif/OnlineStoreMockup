@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fffdfa"/>
+      <stop offset="100%" stop-color="#f7f1e6"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#b45309" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Container card background -->
+  <rect width="800" height="600" rx="28" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle decorative background rings -->
+  <circle cx="680" cy="120" r="110" fill="#fff" opacity="0.35"/>
+  <circle cx="120" cy="500" r="130" fill="#fff" opacity="0.25"/>
+
+  <!-- Category & Feature Badges -->
+  <g transform="translate(48, 48)">
+    <rect width="130" height="32" rx="16" fill="#b45309" opacity="0.12"/>
+    <text x="65" y="21" fill="#b45309" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" letter-spacing="1.5" text-anchor="middle">GROCERIES</text>
+  </g>
+  <g transform="translate(560, 48)">
+    <rect width="192" height="32" rx="16" fill="#ffffff" opacity="0.85"/>
+    <text x="96" y="20" fill="#475569" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" text-anchor="middle">Whole Grain · Cranberry & Seeds</text>
+  </g>
+
+  <!-- Product Illustration -->
+  <g filter="url(#softGlow)">
+    
+            <ellipse cx="400" cy="480" rx="120" ry="16" fill="#cbd5e0" opacity="0.6"/>
+            <!-- Granola Pouch -->
+            <path d="M320 220 L480 220 L495 450 C495 465 305 465 305 450 Z" fill="#d97706" stroke="#b45309" stroke-width="6"/>
+            <!-- Top zip seal -->
+            <rect x="315" y="210" width="170" height="20" rx="4" fill="#92400e"/>
+            <!-- Front Window -->
+            <circle cx="400" cy="350" r="45" fill="#fef3c7" stroke="#92400e" stroke-width="4"/>
+            <!-- Granola clusters -->
+            <circle cx="385" cy="340" r="8" fill="#b45309"/>
+            <circle cx="410" cy="335" r="10" fill="#78350f"/>
+            <circle cx="400" cy="360" r="9" fill="#dc2626"/>
+            <circle cx="420" cy="360" r="7" fill="#65a30d"/>
+            <circle cx="380" cy="365" r="8" fill="#b45309"/>
+        
+  </g>
+
+  <!-- Product Caption Line -->
+  <text x="400" y="555" fill="#334155" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" letter-spacing="-0.3" text-anchor="middle">Artisanal Honey Oat Granola</text>
+</svg>

@@ -11,7 +11,7 @@ $category = is_string($rawCategory) ? trim($rawCategory) : '';
 $sort = is_string($rawSort) ? $rawSort : 'newest';
 $requestedPage = input_int($_GET['page'] ?? 1);
 $page = max(1, $requestedPage === false ? 1 : $requestedPage);
-$perPage = 8;
+$perPage = 12;
 
 $categories = db()->query('SELECT DISTINCT category FROM products WHERE is_active = 1 ORDER BY category')
     ->fetchAll(PDO::FETCH_COLUMN);
@@ -54,9 +54,9 @@ require dirname(__DIR__) . '/src/views/header.php';
 ?>
 <section class="hero">
     <div class="hero-copy">
-        <p class="eyebrow">Curated for everyday</p>
-        <h1>Tech and study gear<br>for everyday use.</h1>
-        <p>Browse the catalogue, add items to your cart, and check out in a few steps.</p>
+        <p class="eyebrow">Curated for everyday focus</p>
+        <h1>Premium tech, desk gear<br>&amp; daily essentials.</h1>
+        <p>Explore hand-tested audio, ergonomic workspace gear, and everyday essentials, delivered safely to your door with Payment on Delivery.</p>
         <div class="hero-actions">
             <a class="button button-primary" href="#catalogue">Shop all products</a>
             <a class="button button-light" href="<?= h(url('cart.php')) ?>">View cart</a>
@@ -65,7 +65,7 @@ require dirname(__DIR__) . '/src/views/header.php';
     <div class="hero-art" aria-hidden="true">
         <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
         <div class="hero-device"><span>MS</span><i></i><i></i><i></i></div>
-        <div class="hero-spark spark-one">✳</div><div class="hero-spark spark-two">✦</div>
+        <div class="hero-spark spark-one" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"></path></svg></div><div class="hero-spark spark-two" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"></path></svg></div>
         <div class="hero-caption">Good tools.<br>Better days.</div>
     </div>
 </section>

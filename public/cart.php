@@ -62,7 +62,7 @@ require dirname(__DIR__) . '/src/views/header.php';
             <?php foreach ($items as $id => $item): ?>
                 <article class="cart-item" data-product-id="<?= $id ?>">
                     <a class="cart-thumb" href="<?= h(url('product.php?id=' . $id)) ?>">
-                        <img src="<?= h(product_image_url($item['image'])) ?>" alt="">
+                        <img src="<?= h(product_image_url($item['image'])) ?>" data-image-fallback="<?= h(url('assets/img/product-placeholder.svg')) ?>" alt="">
                     </a>
                     <div class="cart-item-copy">
                         <p class="eyebrow"><?= h($item['category']) ?></p>
@@ -99,7 +99,7 @@ require dirname(__DIR__) . '/src/views/header.php';
         </aside>
     </div>
 <?php else: ?>
-    <section class="empty-state"><div class="empty-bag" aria-hidden="true">＋</div><h2>Your cart is empty</h2>
+    <section class="empty-state"><div class="empty-bag" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.2 11.1a2 2 0 0 0 2 1.6h8.4a2 2 0 0 0 1.9-1.4L21 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg></div><h2>Your cart is empty</h2>
         <p>Find something useful for work, study, or everyday life.</p><a class="button button-primary" href="<?= h(url()) ?>">Explore products</a></section>
 <?php endif; ?>
 <?php require dirname(__DIR__) . '/src/views/footer.php'; ?>

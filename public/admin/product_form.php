@@ -104,8 +104,9 @@ require dirname(__DIR__, 2) . '/src/views/header.php';
         </div>
         <label for="category">Category</label><input id="category" name="category" maxlength="80" value="<?= h($values['category']) ?>" required>
         <label for="image">Product image <span class="muted">(JPEG, PNG or WebP; max 3 MB)</span></label>
-        <input id="image" name="image" type="file" accept="image/jpeg,image/png,image/webp">
-        <?php if ($values['image']): ?><img class="admin-image-preview" src="<?= h(product_image_url($values['image'])) ?>" alt="Current product image"><?php endif; ?>
+        <input id="image" name="image" type="file" accept="image/jpeg,image/png,image/webp" data-image-upload>
+        <small class="field-hint" data-upload-status role="status">Choose a JPEG, PNG, or WebP image up to 3 MB.</small>
+        <?php if ($values['image']): ?><img class="admin-image-preview" data-image-fallback="<?= h(url('assets/img/product-placeholder.svg')) ?>" src="<?= h(product_image_url($values['image'])) ?>" alt="Current product image" data-upload-preview><?php else: ?><img class="admin-image-preview" data-image-fallback="<?= h(url('assets/img/product-placeholder.svg')) ?>" src="<?= h(url('assets/img/product-placeholder.svg')) ?>" alt="Selected product image preview" data-upload-preview hidden><?php endif; ?>
         <label class="checkbox-label"><input type="checkbox" name="is_active" value="1" <?= $values['is_active'] ? 'checked' : '' ?>> Show this product in the shop</label>
         <div class="form-actions"><button class="button button-primary"><?= $id ? 'Save changes' : 'Add product' ?></button>
             <a class="button button-light" href="<?= h(url('admin/products.php')) ?>">Cancel</a></div>

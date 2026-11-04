@@ -22,7 +22,7 @@ require dirname(__DIR__) . '/src/views/header.php';
     <span>/</span><span><?= h($product['name']) ?></span>
 </nav>
 <section class="product-detail">
-    <div class="detail-image"><img src="<?= h(product_image_url($product['image'])) ?>" alt="<?= h($product['name']) ?>"></div>
+    <div class="detail-image"><img src="<?= h(product_image_url($product['image'])) ?>" data-image-fallback="<?= h(url('assets/img/product-placeholder.svg')) ?>" alt="<?= h($product['name']) ?>" width="800" height="600" decoding="async"></div>
     <div class="detail-copy">
         <p class="eyebrow"><?= h($product['category']) ?></p>
         <h1><?= h($product['name']) ?></h1>
@@ -38,7 +38,7 @@ require dirname(__DIR__) . '/src/views/header.php';
             <input id="quantity" name="quantity" type="number" min="1" max="<?= max(1, (int) $product['stock']) ?>" value="1" required>
             <button class="button button-primary" <?= (int) $product['stock'] < 1 ? 'disabled' : '' ?>>Add to cart</button>
         </form>
-        <p class="small-note">Secure checkout · Local learning project</p>
+        <p class="small-note">✓ Fast Nationwide Delivery · ✓ 30-Day Return Guarantee · ✓ 100% Genuine Quality</p>
     </div>
 </section>
 <?php require dirname(__DIR__) . '/src/views/footer.php'; ?>

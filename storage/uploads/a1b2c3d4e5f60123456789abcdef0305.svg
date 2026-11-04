@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#edf2f7"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#e11d48" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Container card background -->
+  <rect width="800" height="600" rx="28" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle decorative background rings -->
+  <circle cx="680" cy="120" r="110" fill="#fff" opacity="0.35"/>
+  <circle cx="120" cy="500" r="130" fill="#fff" opacity="0.25"/>
+
+  <!-- Category & Feature Badges -->
+  <g transform="translate(48, 48)">
+    <rect width="130" height="32" rx="16" fill="#e11d48" opacity="0.12"/>
+    <text x="65" y="21" fill="#e11d48" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" letter-spacing="1.5" text-anchor="middle">PERIPHERALS</text>
+  </g>
+  <g transform="translate(560, 48)">
+    <rect width="192" height="32" rx="16" fill="#ffffff" opacity="0.85"/>
+    <text x="96" y="20" fill="#475569" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" text-anchor="middle">Condenser · Tap-To-Mute</text>
+  </g>
+
+  <!-- Product Illustration -->
+  <g filter="url(#softGlow)">
+    
+            <ellipse cx="400" cy="480" rx="110" ry="16" fill="#cbd5e0" opacity="0.6"/>
+            <!-- Round Base & Stem -->
+            <ellipse cx="400" cy="450" rx="85" ry="20" fill="#334155"/>
+            <rect x="390" y="340" width="20" height="110" rx="4" fill="#475569"/>
+            <!-- Shock Mount Ring -->
+            <circle cx="400" cy="270" r="85" fill="none" stroke="#64748b" stroke-width="6"/>
+            <!-- Mic Body -->
+            <rect x="365" y="180" width="70" height="170" rx="35" fill="#1e293b" stroke="#334155" stroke-width="4"/>
+            <!-- Mesh Grille -->
+            <rect x="372" y="190" width="56" height="75" rx="28" fill="#e11d48" opacity="0.8"/>
+            <!-- Gain Knob -->
+            <circle cx="400" cy="305" r="8" fill="#94a3b8"/>
+        
+  </g>
+
+  <!-- Product Caption Line -->
+  <text x="400" y="555" fill="#334155" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" letter-spacing="-0.3" text-anchor="middle">Cardioid Studio USB Microphone</text>
+</svg>
